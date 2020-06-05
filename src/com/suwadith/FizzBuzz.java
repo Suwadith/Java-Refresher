@@ -11,7 +11,7 @@ public class FizzBuzz {
         System.out.println("Number: ");
         int number = sc.nextInt();
 
-        if ( (number % 5) == 0 && (number % 3 == 0) ) {
+        if ( (number % 5 == 0) && (number % 3 == 0) ) {
             System.out.println("FizzBuzz");
         } else if ((number % 5) == 0) {
             System.out.println("Fizz");
