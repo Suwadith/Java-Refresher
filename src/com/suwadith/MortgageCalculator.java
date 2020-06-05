@@ -10,14 +10,40 @@ public class MortgageCalculator {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Principal: ");
-        double principal = sc.nextDouble();
+        double principal = 0;
+        double annualInterestRate = 0;
+        int years = 0;
 
-        System.out.println("Annual Interest Rate: ");
-        double annualInterestRate = sc.nextDouble();
+        while(true) {
+            System.out.println("Principal ($1K - $1M): ");
+            principal = sc.nextDouble();
+            if(principal >= 1000 && principal <= 1_000_000) {
+                break;
+            } else {
+                System.out.println("Please enter a number between 1,000 and 1,000,000");
+            }
+        }
 
-        System.out.println("Period (Years): ");
-        int years = sc.nextInt();
+        while(true) {
+            System.out.println("Annual Interest Rate: ");
+            annualInterestRate = sc.nextDouble();
+            if(annualInterestRate > 0 && annualInterestRate <= 30) {
+                break;
+            } else {
+                System.out.println("Please enter a value greater than 0 or less than or equal to 30");
+            }
+        }
+
+        while(true) {
+            System.out.println("Period (Years): ");
+            years = sc.nextInt();
+            if(years >= 1 && years <= 30) {
+                break;
+            } else {
+                System.out.println("Please enter a value between 1 and 30");
+            }
+        }
+
 
         double monthlyInterestRate = (annualInterestRate/1200);
         int months = years*12;
