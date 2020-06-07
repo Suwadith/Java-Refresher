@@ -1,4 +1,4 @@
-package com.suwadith;
+package com.suwadith.basic;
 
 import java.text.NumberFormat;
 import java.util.Locale;

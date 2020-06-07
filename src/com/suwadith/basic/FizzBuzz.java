@@ -1,4 +1,4 @@
-package com.suwadith;
+package com.suwadith.basic;
 
 import java.util.Scanner;
 
