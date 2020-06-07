@@ -1,4 +1,4 @@
-package com.suwadith.data.sructures.and.algorithms;
+package com.suwadith.algorithms;
 
 public class Arrays {
 
