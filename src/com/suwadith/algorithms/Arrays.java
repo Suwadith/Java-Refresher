@@ -1,5 +1,7 @@
 package com.suwadith.algorithms;
 
+import java.sql.Array;
+
 public class Arrays {
 
     private int[] numberArray = new int[50];
@@ -76,6 +78,44 @@ public class Arrays {
         return indexWithValue;
     }
 
+    public void bubbleSort() {
+        for(int i = 0; i < arraySize-1; i++) {
+            for(int j = 0; j < (arraySize-i-1); j++) {
+                if(numberArray[j] > numberArray[j+1]) {
+                    int large = numberArray[j];
+                    numberArray[j] = numberArray[j+1];
+                    numberArray[j+1] = large;
+                }
+            }
+        }
+    }
+
+    public void binarySearch(int value) {
+        int minimumIndex = 0;
+        int maximumIndex = arraySize-1;
+
+        if(value >= numberArray[minimumIndex] && value <= numberArray[maximumIndex]) {
+            while(minimumIndex <= maximumIndex) {
+
+                int middleIndex = (minimumIndex + maximumIndex) / 2;
+
+                if(numberArray[middleIndex] > value) {
+                    maximumIndex = middleIndex - 1;
+                } else if(numberArray[middleIndex] < value) {
+                    minimumIndex = middleIndex + 1;
+                } else {
+                    System.out.println("The value " + value + " was found in the index " + middleIndex + " of the array");
+                    minimumIndex = maximumIndex + 1;
+                }
+
+            }
+        } else {
+            System.out.println("Value is not present in the array");
+        }
+
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -96,6 +136,11 @@ public class Arrays {
         newArray.printArray();
 
         newArray.linearSearch(16);
+
+        newArray.bubbleSort();
+        newArray.printArray();
+
+        newArray.binarySearch(13);
 
     }
 
