@@ -95,7 +95,6 @@ public class Arrays {
         int minimumIndex = 0;
         int maximumIndex = arraySize-1;
 
-
             while(minimumIndex <= maximumIndex) {
 
                 int middleIndex = (minimumIndex + maximumIndex) / 2;
@@ -117,6 +116,45 @@ public class Arrays {
             }
     }
 
+    public void selectionSort() {
+
+        for (int i = 0; i < arraySize - 1; i++) {
+
+            int minimum = i;
+
+            for (int j = i + 1; j < arraySize; j++) {
+
+                if (numberArray[minimum] > numberArray[j]) {
+                    minimum = j;
+                }
+
+            }
+
+            int tmp = numberArray[minimum];
+            numberArray[minimum] = numberArray[i];
+            numberArray[i] = tmp;
+
+
+        }
+
+    }
+
+
+    public void insertionSort() {
+
+        for(int i = 1; i<arraySize; i++) {
+            int key = i;
+            int current = numberArray[i];
+
+            while((key>0) && (numberArray[key-1] > current)) {
+                numberArray[key] = numberArray[key-1];
+                key--;
+            }
+            numberArray[key] = current;
+        }
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -136,12 +174,18 @@ public class Arrays {
         newArray.insertValue(35);
         newArray.printArray();
 
-        newArray.linearSearch(16);
+//        newArray.linearSearch(16);
 
-        newArray.bubbleSort();
+//        newArray.bubbleSort();
+//        newArray.printArray();
+//
+//        newArray.binarySearch(18);
+
+//        newArray.selectionSort();
+
+        newArray.insertionSort();
+
         newArray.printArray();
-
-        newArray.binarySearch(18);
 
     }
 
