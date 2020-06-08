@@ -91,10 +91,11 @@ public class Arrays {
     }
 
     public void binarySearch(int value) {
+        boolean found = false;
         int minimumIndex = 0;
         int maximumIndex = arraySize-1;
 
-        if(value >= numberArray[minimumIndex] && value <= numberArray[maximumIndex]) {
+
             while(minimumIndex <= maximumIndex) {
 
                 int middleIndex = (minimumIndex + maximumIndex) / 2;
@@ -104,16 +105,16 @@ public class Arrays {
                 } else if(numberArray[middleIndex] < value) {
                     minimumIndex = middleIndex + 1;
                 } else {
+                    found = true;
                     System.out.println("The value " + value + " was found in the index " + middleIndex + " of the array");
                     minimumIndex = maximumIndex + 1;
                 }
 
             }
-        } else {
-            System.out.println("Value is not present in the array");
-        }
 
-
+            if (!found) {
+                System.out.println("Value was not found");
+            }
     }
 
 
@@ -140,7 +141,7 @@ public class Arrays {
         newArray.bubbleSort();
         newArray.printArray();
 
-        newArray.binarySearch(13);
+        newArray.binarySearch(18);
 
     }
 
