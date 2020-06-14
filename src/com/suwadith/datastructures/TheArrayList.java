@@ -25,7 +25,7 @@ public class TheArrayList {
             System.out.println(fruit);
         }
 
-        //Sorting Arraylist using Collections (Alphabetical / Numerical)
+        //Sorting ArrayList using Collections (Alphabetical / Numerical)
         Collections.sort(fruits);
         System.out.println(fruits);
 
